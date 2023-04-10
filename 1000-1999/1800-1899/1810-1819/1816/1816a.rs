@@ -29,8 +29,6 @@ fn main() {
             println!("{} {}", a, b);
 		} else {
             println!("{}",2);
-
-
 			if gcd(a+1, b) == 1 && a != 1000000000 {
                 println!("{} {}", a+1, b);
                 println!("{} {}", a, b);
