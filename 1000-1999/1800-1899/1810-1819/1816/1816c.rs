@@ -19,16 +19,14 @@ fn main() {
         let mut a : Vec<i64> = line.trim().split(" ")
             .map(|x| x.parse().expect("Not an integer!"))
             .collect();
-        for i in 1..n {
-			(a[i-1], a[i]) = (0, a[i]-a[i-1]);
-		}
-        if a[n-1] >= 0 {
+       
+        if n %2 == 1 {
             println!("YES");
         }else{
-            for i in (1..n).rev() {
-                (a[i], a[i-1]) = (0, a[i-1]-a[i]);
+            for i in 1..n {
+                (a[i-1], a[i]) = (0, a[i]-a[i-1]);
             }
-            if a[0] <= 0 {
+            if a[n-1] >= 0 {
                 println!("YES");
             }else{
                 println!("NO");
