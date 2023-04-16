@@ -16,11 +16,23 @@ fn main() {
     io::stdin()
         .read_line(&mut s)
         .expect("Failed to read line");
-    if s.ends_with('\n') || s.ends_with('\r'){
+    if s.ends_with('\n') {
         s.pop();
+       // println!("popped newline");
     }
-    if s.ends_with('\n') || s.ends_with('\r'){
+    if  s.ends_with('\r'){
         s.pop();
+        //println!("popped tab");
+
+    }
+    if s.ends_with('\n') {
+        s.pop();
+      //  println!("popped newline");
+    }
+    if  s.ends_with('\r'){
+        s.pop();
+        //println!("popped tab");
+
     }
     let s : Vec<char> = s.chars().collect();
     let mut m : HashMap<char, i32> = HashMap::new();
@@ -31,7 +43,6 @@ fn main() {
     let mut ans : i32  = 0;
     for i in 0..s.len() {
         if !m.contains_key(&s[i]) {
-            println!("{}, {}", i, s[i]);
             continue;
         }
         if i == 0 {
