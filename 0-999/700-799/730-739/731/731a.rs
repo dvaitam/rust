@@ -19,6 +19,9 @@ fn main() {
     if s.ends_with('\n') || s.ends_with('\r'){
         s.pop();
     }
+    if s.ends_with('\n') || s.ends_with('\r'){
+        s.pop();
+    }
     let s : Vec<char> = s.chars().collect();
     let mut m : HashMap<char, i32> = HashMap::new();
     for i in 0..26{
@@ -28,6 +31,7 @@ fn main() {
     let mut ans : i32  = 0;
     for i in 0..s.len() {
         if !m.contains_key(&s[i]) {
+            println!("{}, {}", i, s[i]);
             continue;
         }
         if i == 0 {
