@@ -90,7 +90,6 @@ fn main() {
 		} else {
             if m.contains_key(&invm[&key]) {
                 ans += v * m[&invm[&key]];
-
             }
 		}
         counted.insert(invm[&key]);
