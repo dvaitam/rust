@@ -2,31 +2,31 @@ use std::io;
 fn decode(anb :bool, anc: bool, _bnc :bool, aob: bool, aoc :bool, boc :bool) -> (bool, bool, bool) {
 	if anb {
 		if anc {
-			return (true, true, true)
+			 (true, true, true)
 		} else {
-			return (true, true, false)
+			 (true, true, false)
 		}
 	} else {
 		if aob {
 			if aoc {
 				if anc {
-					return (true, false, true)
+					 (true, false, true)
 				} else {
 					if boc {
-						return (false, true, true)
+						 (false, true, true)
 					} else {
-						return (true, false, false)
+						 (true, false, false)
 					}
 				}
 
 			} else {
-				return (false, true, false)
+				 (false, true, false)
 			}
 		} else {
 			if aoc {
-				return (false, false, true)
+				 (false, false, true)
 			} else {
-				return (false, false, false)
+				 (false, false, false)
 			}
 		}
 	}
