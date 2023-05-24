@@ -1,20 +1,24 @@
-use std::io;
 use std::collections::HashMap;
+use std::io;
 fn main() {
     let mut line = String::new();
     io::stdin()
         .read_line(&mut line)
         .expect("Failed to read line");
-    let n : usize = line.trim().parse().expect("not int");
-   
-    let mut line = String::new();
-    io::stdin().read_line(&mut line).expect("Failed to read line");
+    let n: usize = line.trim().parse().expect("not int");
 
-    let mut a : Vec<i32> = line.trim().split(" ")
+    let mut line = String::new();
+    io::stdin()
+        .read_line(&mut line)
+        .expect("Failed to read line");
+
+    let mut a: Vec<i32> = line
+        .trim()
+        .split(" ")
         .map(|x| x.parse().expect("Not an integer!"))
         .collect();
-    let mut m : HashMap<i32, i32> = HashMap::new();
-    for i in 0..n{
+    let mut m: HashMap<i32, i32> = HashMap::new();
+    for i in 0..n {
         let count = m.entry(a[i]).or_insert(0);
         *count += 1;
     }
@@ -32,7 +36,7 @@ fn main() {
         }
         if twice && v >= 2 {
             lost = true;
-            break
+            break;
         }
         if v >= 2 {
             twice = true;
@@ -42,7 +46,7 @@ fn main() {
     if !lost {
         if twice {
             for i in 0..n {
-                if a[i] == double-1 {
+                if a[i] == double - 1 {
                     lost = true;
                     break;
                 }
@@ -65,19 +69,19 @@ fn main() {
     let mut ans = 0;
     a.sort();
     for i in 0..n {
-		if curr <= a[i] {
-			ans += a[i] - curr;
-			ans %= 2;
-			curr += 1;
-		}
-	}
-    if twice  {
+        if curr <= a[i] {
+            ans += a[i] - curr;
+            ans %= 2;
+            curr += 1;
+        }
+    }
+    if twice {
         ans += 1;
         ans %= 2;
     }
     if ans % 2 == 0 {
         println!("cslnb");
-    }else{
+    } else {
         println!("sjfnb");
     }
 }
